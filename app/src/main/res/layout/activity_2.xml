@@ -192,7 +192,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:hint="Activo"
+            android:text=""
             android:textSize="30dp"
             android:gravity="center"
             android:textStyle="italic"
@@ -218,7 +218,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Guardar" />
+            android:text="Guardar"
+            android:onClick="Guardar"
+            />
 
         <Button
             android:id="@+id/btnConsultar"
