@@ -104,6 +104,7 @@
             android:id="@+id/btnIngresar"
             android:layout_width="200dp"
             android:layout_height="match_parent"
+            android:onClick="Ingresar"
             android:layout_weight="1"
             android:text="Ingresar" />
     </LinearLayout>
@@ -126,6 +127,7 @@
             android:id="@+id/btnRegistra"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:onClick="Registrarse"
             android:layout_weight="1"
             android:text="Registrarse" />
     </LinearLayout>
@@ -149,6 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="CancelarIng"
             android:text="Cancelar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
