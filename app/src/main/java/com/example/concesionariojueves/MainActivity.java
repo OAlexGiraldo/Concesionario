@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             Conexion_Concesionario admin = new Conexion_Concesionario(this, "concesionario.bd", null, 1);
             SQLiteDatabase db=admin.getReadableDatabase();
-            Cursor fila=db.rawQuery("selet usuario from TbLCliente where usuario='"+usuario+"'and clave='"+clave+"'",null);
+            Cursor fila=db.rawQuery("select identificacion from TbLCliente where usuario='"+usuario+"'and clave='"+clave+"'",null);
             if (fila.moveToNext()){
                 Intent intVehiculos=new Intent(this,VehiculosActivyty.class);
                 startActivity(intVehiculos);
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intregistrarse);
     }
     public void CancelarIng(View view){
+
         limpiar_campos();
     }
 }
