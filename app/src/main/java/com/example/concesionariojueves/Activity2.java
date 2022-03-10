@@ -20,6 +20,7 @@ public class Activity2 extends AppCompatActivity {
         Button jbtnregresa,jbtnguardar,jbtncancelar,jbtnanular,jbtnconsultar;
         long resp;
         int sw;
+        String identificacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class Activity2 extends AppCompatActivity {
     }
 
     public void Guardar(View view){
-        String identificacion, nombre, usuario,clave1,clave2;
+        String  nombre, usuario,clave1,clave2;
         identificacion=jetidentificacion.getText().toString();
         nombre=jetnombre.getText().toString();
         usuario=jetemail.getText().toString();
@@ -100,7 +101,7 @@ public class Activity2 extends AppCompatActivity {
     }
 
     public void Consultar_Cliente(){
-        String identificacion;
+
         identificacion=jetidentificacion.getText().toString();
         if (identificacion.isEmpty()){
             Toast.makeText(this, "Identificacion requerida", Toast.LENGTH_SHORT).show();
@@ -121,6 +122,25 @@ public class Activity2 extends AppCompatActivity {
                 Toast.makeText(this, "Registro no existe", Toast.LENGTH_SHORT).show();
             }
             db.close();
+        }
+    }
+    public void Anular(View view){
+        Consultar_Cliente();
+        if (sw == 1){
+            Conexion_Concesionario admin=new Conexion_Concesionario(this,"concesionario.bd",null,1);
+            SQLiteDatabase db=admin.getWritableDatabase();
+            ContentValues dato=new ContentValues();
+            dato.put("identificacion",identificacion);
+            dato.put("activo","no");
+            resp=db.update("TblCliente",dato,"identificacion='"+identificacion+"'");
+            if (resp>0){
+                Toast.makeText(this,"Registro eliminado",Toast.LENGTH_LONG).show();
+                limpiar_campos();
+            }else
+            {
+                Toast.makeText(this,"Error eliminando registro",Toast.LENGTH_LONG).show();
+            }
+
         }
     }
 
