@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#8B8F8F"
+    >
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -106,6 +108,7 @@
             android:layout_height="match_parent"
             android:onClick="Ingresar"
             android:layout_weight="1"
+            android:backgroundTint="#00BCD4"
             android:text="Ingresar" />
     </LinearLayout>
 
@@ -128,6 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:onClick="Registrarse"
+            android:backgroundTint="#00BCD4"
             android:layout_weight="1"
             android:text="Registrarse" />
     </LinearLayout>
@@ -152,6 +156,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="CancelarIng"
+            android:backgroundTint="#00BCD4"
             android:text="Cancelar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

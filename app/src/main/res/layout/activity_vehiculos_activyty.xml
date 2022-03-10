@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VehiculosActivyty">
+    tools:context=".VehiculosActivyty"
+    android:background="#8B8F8F"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -143,21 +145,24 @@
 
         <Button
             android:id="@+id/btnguardarv"
-            android:layout_width="194dp"
+            android:layout_width="192dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="GuardarV"
+            android:backgroundTint="#00BCD4"
             android:text="Guradar">
 
         </Button>
 
         <Button
             android:id="@+id/btncansultarv"
-            android:layout_width="212dp"
+            android:layout_width="222dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="ConsultarV"
-            android:text="Consultar">
+            android:text="Consultar"
+            android:backgroundTint="#00BCD4"
+            >
             >
 
         </Button>
@@ -180,6 +185,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Anular"
+            android:backgroundTint="#00BCD4"
             >
 
         </Button>
@@ -190,6 +196,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="CancelarV"
+            android:backgroundTint="#00BCD4"
             android:text="Cancelar">
             >
 
@@ -212,6 +219,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="RegresarV"
+            android:backgroundTint="#00BCD4"
             android:text="Regresra">
 
         </Button>

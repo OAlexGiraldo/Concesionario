@@ -56,18 +56,18 @@ public class VehiculosActivyty extends AppCompatActivity {
             jetplaca.requestFocus();
         } else {
 
-            Conexion_Concesionario admin = new Conexion_Concesionario(this, "concesionario.bd", null, 1);
+            Conexion_Concesionario admin = new Conexion_Concesionario(this, "concesionario1.bd", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
-            ContentValues dato = new ContentValues();
-            dato.put("placa", placa);
-            dato.put("marca", marca);
-            dato.put("modelo", modelo);
-            dato.put("valor", valor);
+            ContentValues dat = new ContentValues();
+            dat.put("placa", placa);
+            dat.put("marca", marca);
+            dat.put("modelo", modelo);
+            dat.put("valor", valor);
             if (vh == 0)
-                resp = db.insert("TblVehiculo", null, dato);
+                resp = db.insert("TbLVehiculos", null, dat);
             else {
                 vh = 0;
-                resp = db.update("TblVehiculo", dato, "placa='" + placa + "'", null);
+                resp = db.update("TbLVehiculos", dat, "placa='" + placa + "'", null);
             }
             if (resp > 0) {
                 Toast.makeText(this, "Registro guardado", Toast.LENGTH_SHORT).show();
@@ -92,14 +92,14 @@ public class VehiculosActivyty extends AppCompatActivity {
             jetplaca.requestFocus();
         }
         else {
-            Conexion_Concesionario admin = new Conexion_Concesionario(this, "concesionario.bd", null, 1);
+            Conexion_Concesionario admin = new Conexion_Concesionario(this, "concesionario1.bd", null, 1);
             SQLiteDatabase db=admin.getReadableDatabase();
-            Cursor fila=db.rawQuery("select * from TblVehiculo where Placa='" + placa + "'",null);
-            if (fila.moveToNext()){
+            Cursor fil=db.rawQuery("select * from TbLVehiculos where placa='" + placa + "'",null);
+            if (fil.moveToNext()){
                 vh=1;
-                jetmarca.setText(fila.getString(1));
-                jetmodelo.setText(fila.getString(2));
-                jetvalor.setText(fila.getString(3));
+                jetmarca.setText(fil.getString(1));
+                jetmodelo.setText(fil.getString(2));
+                jetvalor.setText(fil.getString(3));
                 Toast.makeText(this, "Registrado encontrado", Toast.LENGTH_SHORT).show();
             }
             else{
